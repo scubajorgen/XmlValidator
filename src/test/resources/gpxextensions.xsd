@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd         ="http://www.w3.org/2001/XMLSchema"
+            xmlns             ="http://tracklog.studioblueplanet.net/gpxextensions/v4"
+            targetNamespace   ="http://tracklog.studioblueplanet.net/gpxextensions/v4"
+            elementFormDefault="qualified">
+
+  <xsd:annotation><xsd:documentation>
+    This schema defines the extensions used to store addional info to a GPX file.
+  </xsd:documentation></xsd:annotation>
+
+  <xsd:element name="TrackExtension"       type="TrackExtension_t" />
+  <xsd:element name="TrackPointExtension"  type="TrackPointExtension_t" />
+
+  <xsd:complexType name="TrackPointExtension_t">
+    <xsd:annotation>
+        <xsd:documentation>
+            This type contains data fields available in Garmin GDB track points that cannot
+            be represented in track points in GPX 1.1 instances.
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:all>
+      <xsd:element name="course" type="Degrees_t"          minOccurs="0" maxOccurs="1" />
+      <xsd:element name="speed"  type="MetersPerSecond_t"  minOccurs="0" maxOccurs="1" />
+      <xsd:element name="dist"   type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="hr"     type="Bpm_t"              minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ehpe"   type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="evpe"   type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="elegps" type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="temp"   type="DegreesCelsius_t"   minOccurs="0" maxOccurs="1" />
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="TrackExtension_t">
+    <xsd:annotation>
+        <xsd:documentation>
+            This type contains data fields available in Garmin GDB track points that cannot
+            be represented in track points in GPX 1.1 instances.
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:all>
+      <xsd:element name="deviceInfo"                type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the recording device</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="deviceInfoInternalHr"      type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the HR recording device</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="deviceInfoExternalHr"      type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the external HR recording device</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="deviceInfoGps"             type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the GPS device/module</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="deviceInfoBarometer"       type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the barometer device</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="deviceFirmware"            type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Device firmware description and/or version</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="software"                  type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Dscription of the software that was used to generate the GPX</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="activity"                  type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the activity</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="sourceFile"                type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the activity source file</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="routeName"                 type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Name of the route that was followed</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="smoothing"                 type="xsd:boolean" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Indicates if the raw values have been smoothed by the software</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="smoothingFactor"           type="xsd:decimal" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Track smoothing factor: deprecated</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="compression"               type="xsd:boolean" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Indicates whether the raw track has been compressed</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="compressionMaxErr"         type="Meters_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Maximum allowed error that has been used by the compression algorithm</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="distance_m"                type="Meters_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Total track distance recorded</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="duration_s"                type="Seconds_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Total track duration</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timedDuration_s"           type="Seconds_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Total track duration that has been recorded</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="aveSpeed_kmh"              type="KilometersPerHour_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Average speed</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="maxSpeed_kmh"              type="KilometersPerHour_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Maximum speed</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ascent_m"                  type="Meters_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Total ascent in m</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="descent_m"                 type="Meters_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Total descent in m</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="calories_cal"              type="Meters_t" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Total descent in m</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="garminGrit_kgrit"         type="xsd:decimal" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Recorded grit value on Garmin</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="garminFlow"               type="xsd:decimal" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Recorded flow value on Garmin Edge</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="garminJumps"              type="xsd:integer" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Number of recorded jumps on Garmin Edge</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="steps"                    type="xsd:integer" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Number of steps made during running</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="pace_permin"              type="xsd:integer" minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Pace (Steps per minute)</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tomtomFitnessPoints"      type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Fitness points as recored by TomTom wearables</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tomtomWorkoutName"        type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Name of the workout that was executed on TomTom wearable</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tomtomWorkoutDescription" type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Description of the workout that was executed on TomTom wearable</xsd:documentation></xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tomtomWorkoutSteps"       type="xsd:string"  minOccurs="0" maxOccurs="1" >
+        <xsd:annotation><xsd:documentation>Number of steps in the workout that was executed on TomTom wearable</xsd:documentation></xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:simpleType name="DegreesCelsius_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a temperature value measured in degrees Celsius.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Seconds_t">	
+    <xsd:annotation><xsd:documentation>
+    This type contains a distance value measured in meters.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:integer"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Meters_t">	
+    <xsd:annotation><xsd:documentation>
+    This type contains a distance value measured in meters.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="MetersPerSecond_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a speed value measured in meters per second.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="KilometersPerHour_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a speed value measured in meters per second.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Bpm_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a heartrate value in beates per mimute.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Degrees_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a heading value in degrees.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+
+</xsd:schema>

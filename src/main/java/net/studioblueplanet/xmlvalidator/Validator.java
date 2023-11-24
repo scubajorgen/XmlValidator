@@ -3,31 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.studioblueplanet.xmlvalidator;
+package net.studioblueplanet.xmlvalidator;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.XMLConstants;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import org.xml.sax.SAXException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
-import java.net.URL;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -60,18 +54,15 @@ public class Validator
             // http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
             doc.getDocumentElement().normalize();   
             Element root=doc.getDocumentElement();
-            System.out.println("Root Element :" + root.getNodeName());
-            System.out.println("------");
+            System.out.println("Root Element in XML  : " + root.getNodeName());
             String schemaLocationLine=root.getAttribute("xsi:schemaLocation");
             String[] items=schemaLocationLine.split(" ");
             if (items.length%1==0)
             {
-                System.out.println("Adding XSD locations");
                 xsdLocations=new ArrayList<>();
                 for (int i=1;i<items.length;i+=2)
                 {
                     xsdLocations.add(items[i]);
-                    System.out.println(items[i]);
                 }
             }
             else
@@ -97,7 +88,6 @@ public class Validator
         return ok;
     }
     
-    
     /**
      * Validate the XML against the XSDs
      * @param fileName File name to process
@@ -106,7 +96,6 @@ public class Validator
     public boolean validateXMLSchema(String fileName)
     {
         System.out.println("Validing "+fileName);
-        System.out.println("_______________________________________________________");
         boolean ok=extractXsds(fileName);
         if (ok)
         {
@@ -118,13 +107,25 @@ public class Validator
                 Source[] xsds=new Source[xsdLocations.size()];
                 for (int i=0; i<xsdLocations.size(); i++)
                 {
-                    xsds[i]=new StreamSource(new URL(xsdLocations.get(i)).openStream()); 
+                    String source=xsdLocations.get(i);
+                    if (source.startsWith("http"))
+                    {
+                        // Stream it from internet
+                        System.out.println("Reading XSD from URL : "+source);
+                        xsds[i]=new StreamSource(new URL(xsdLocations.get(i)).openStream()); 
+                    }
+                    else
+                    {
+                        // From file
+                        System.out.println("Reading XSD from File: "+source);
+                        xsds[i]=new StreamSource(new FileInputStream(xsdLocations.get(i))); 
+                    }
                 }
 
                 Schema schema = factory.newSchema(xsds);
                 javax.xml.validation.Validator validator = schema.newValidator();
                 validator.validate(new StreamSource(new File(fileName)));
-                System.out.println("Validation OK!");
+                System.out.println("VALIDATION PASSED!");
 
             } 
             catch (IOException e)
