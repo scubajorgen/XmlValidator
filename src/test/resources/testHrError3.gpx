@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" 
+     xmlns:u-gotMe="http://tracklog.studioblueplanet.net/gpxextensions/v4" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     creator="fenix 7 Solar - 3408468714" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd http://tracklog.studioblueplanet.net/gpxextensions/v4 https://tracklog.studioblueplanet.net/gpxextensions/v4/gpxextensions.xsd">
+  <trk>
+    <name>Track</name>
+    <desc>Created by: GarminTrackConverter v2.6-dirty (22.11.2023 @ 21:18:23 CET). Logged by: fenix 7 Solar - 3408468714. Logged as: cycling - mountain. Original file: 2023-11-22-19-57-27-external.fit (raw, compressed).</desc>
+    <trkseg>
+      <trkpt lat="53.0126797" lon="6.7247265">
+        <ele>13.2</ele>
+        <time>2023-11-22T18:57:27Z</time>
+        <extensions>
+          <u-gotMe:TrackPointExtension>          
+            <u-gotMe:speed>0.0</u-gotMe:speed>
+            <u-gotMe:dist>0.5</u-gotMe:dist>
+            <u-gotMe:hr>65</u-gotMe:hr>
+            <u-gotMe:ehpe>1500
+          </u-gotMe:TrackPointExtension>          
+        </extensions>
+      </trkpt>
+      <trkpt lat="53.0126836" lon="6.7247339">
+        <ele>13.2</ele>
+        <time>2023-11-22T18:57:29Z</time>
+        <extensions>
+          <u-gotMe:TrackPointExtension>          
+            <u-gotMe:speed>0.2</u-gotMe:speed>
+            <u-gotMe:dist>0.9</u-gotMe:dist>
+            <u-gotMe:hr>63</u-gotMe:hr>
+            <u-gotMe:ehpe>1500</u-gotMe:ehpe>
+          </u-gotMe:TrackPointExtension>          
+        </extensions>
+      </trkpt>
+      <trkpt lat="53.0126820" lon="6.7247449">
+        <ele>13.2</ele>
+        <time>2023-11-22T18:57:32Z</time>
+        <extensions>
+          <u-gotMe:TrackPointExtension>          
+            <u-gotMe:speed>0.0</u-gotMe:speed>
+            <u-gotMe:dist>0.9</u-gotMe:dist>
+            <u-gotMe:hr>62</u-gotMe:hr>
+            <u-gotMe:ehpe>1500</u-gotMe:ehpe>
+          </u-gotMe:TrackPointExtension>          
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <extensions>
+    <u-gotMe:TrackExtension>
+      <u-gotMe:deviceInfo>fenix 7 Solar - 3408468714</u-gotMe:deviceInfo>
+      <u-gotMe:deviceInfoExternalHr>serial: 2017225 battery: 100% source: bluetooth_low_energy/antplus</u-gotMe:deviceInfoExternalHr>
+      <u-gotMe:deviceFirmware>14.68</u-gotMe:deviceFirmware>
+      <u-gotMe:software>GarminTrackConverter v2.6-dirty (22.11.2023 @ 21:18:23 CET)</u-gotMe:software>
+      <u-gotMe:activity>cycling - mountain</u-gotMe:activity>
+      <u-gotMe:sourceFile>2023-11-22-19-57-27-external.fit</u-gotMe:sourceFile>
+      <u-gotMe:smoothing>false</u-gotMe:smoothing>
+      <u-gotMe:compression>true</u-gotMe:compression>
+      <u-gotMe:compressionMaxErr>0.3000</u-gotMe:compressionMaxErr>
+      <u-gotMe:distance_m>40.3</u-gotMe:distance_m>
+      <u-gotMe:duration_s>121</u-gotMe:duration_s>
+      <u-gotMe:timedDuration_s>121</u-gotMe:timedDuration_s>
+      <u-gotMe:aveSpeed_kmh>1.19</u-gotMe:aveSpeed_kmh>
+      <u-gotMe:maxSpeed_kmh>5.00</u-gotMe:maxSpeed_kmh>
+      <u-gotMe:descent_m>0</u-gotMe:descent_m>
+      <u-gotMe:ascent_m>2</u-gotMe:ascent_m>
+      <u-gotMe:calories_cal>4.0</u-gotMe:calories_cal>
+      <u-gotMe:garminGrit_kgrit>0.16</u-gotMe:garminGrit_kgrit>
+      <u-gotMe:garminFlow>8.84</u-gotMe:garminFlow>
+    </u-gotMe:TrackExtension>
+  </extensions>
+</gpx>

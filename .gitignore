@@ -3,4 +3,4 @@
 /.project
 /nbproject
 /target
-*.gpx
+./*.gpx
