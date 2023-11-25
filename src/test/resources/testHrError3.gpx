@@ -11,44 +11,44 @@
         <ele>13.2</ele>
         <time>2023-11-22T18:57:27Z</time>
         <extensions>
-          <u-gotMe:TrackPointExtension>          
+          <u-gotMe:trackpointExtension>          
             <u-gotMe:speed>0.0</u-gotMe:speed>
             <u-gotMe:dist>0.5</u-gotMe:dist>
             <u-gotMe:hr>65</u-gotMe:hr>
             <u-gotMe:ehpe>1500
-          </u-gotMe:TrackPointExtension>          
+          </u-gotMe:trackpointExtension>          
         </extensions>
       </trkpt>
       <trkpt lat="53.0126836" lon="6.7247339">
         <ele>13.2</ele>
         <time>2023-11-22T18:57:29Z</time>
         <extensions>
-          <u-gotMe:TrackPointExtension>          
+          <u-gotMe:trackpointExtension>          
             <u-gotMe:speed>0.2</u-gotMe:speed>
             <u-gotMe:dist>0.9</u-gotMe:dist>
             <u-gotMe:hr>63</u-gotMe:hr>
             <u-gotMe:ehpe>1500</u-gotMe:ehpe>
-          </u-gotMe:TrackPointExtension>          
+          </u-gotMe:trackpointExtension>          
         </extensions>
       </trkpt>
       <trkpt lat="53.0126820" lon="6.7247449">
         <ele>13.2</ele>
         <time>2023-11-22T18:57:32Z</time>
         <extensions>
-          <u-gotMe:TrackPointExtension>          
+          <u-gotMe:trackpointExtension>          
             <u-gotMe:speed>0.0</u-gotMe:speed>
             <u-gotMe:dist>0.9</u-gotMe:dist>
             <u-gotMe:hr>62</u-gotMe:hr>
             <u-gotMe:ehpe>1500</u-gotMe:ehpe>
-          </u-gotMe:TrackPointExtension>          
+          </u-gotMe:trackpointExtension>          
         </extensions>
       </trkpt>
     </trkseg>
   </trk>
   <extensions>
-    <u-gotMe:TrackExtension>
-      <u-gotMe:deviceInfo>fenix 7 Solar - 3408468714</u-gotMe:deviceInfo>
-      <u-gotMe:deviceInfoExternalHr>serial: 2017225 battery: 100% source: bluetooth_low_energy/antplus</u-gotMe:deviceInfoExternalHr>
+    <u-gotMe:trackExtension>
+      <u-gotMe:device>fenix 7 Solar - 3408468714</u-gotMe:device>
+      <u-gotMe:deviceExternalHr>serial: 2017225 battery: 100% source: bluetooth_low_energy/antplus</u-gotMe:deviceExternalHr>
       <u-gotMe:deviceFirmware>14.68</u-gotMe:deviceFirmware>
       <u-gotMe:software>GarminTrackConverter v2.6-dirty (22.11.2023 @ 21:18:23 CET)</u-gotMe:software>
       <u-gotMe:activity>cycling - mountain</u-gotMe:activity>
@@ -66,6 +66,6 @@
       <u-gotMe:calories_cal>4.0</u-gotMe:calories_cal>
       <u-gotMe:garminGrit_kgrit>0.16</u-gotMe:garminGrit_kgrit>
       <u-gotMe:garminFlow>8.84</u-gotMe:garminFlow>
-    </u-gotMe:TrackExtension>
+    </u-gotMe:trackExtension>
   </extensions>
 </gpx>

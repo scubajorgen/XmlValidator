@@ -8,10 +8,11 @@
     This schema defines the extensions used to store addional info to a GPX file.
   </xsd:documentation></xsd:annotation>
 
-  <xsd:element name="TrackExtension"       type="TrackExtension_t" />
-  <xsd:element name="TrackPointExtension"  type="TrackPointExtension_t" />
+  <xsd:element name="trackExtension"        type="TrackExtension_t" />
+  <xsd:element name="tracksegmentExtension" type="TracksegmentExtension_t" />
+  <xsd:element name="trackpointExtension"   type="TrackpointExtension_t" />
 
-  <xsd:complexType name="TrackPointExtension_t">
+  <xsd:complexType name="TrackpointExtension_t">
     <xsd:annotation>
         <xsd:documentation>
             This type contains data fields available in Garmin GDB track points that cannot
@@ -19,14 +20,29 @@
         </xsd:documentation>
     </xsd:annotation>
     <xsd:all>
-      <xsd:element name="course" type="Degrees_t"          minOccurs="0" maxOccurs="1" />
-      <xsd:element name="speed"  type="MetersPerSecond_t"  minOccurs="0" maxOccurs="1" />
-      <xsd:element name="dist"   type="Meters_t"           minOccurs="0" maxOccurs="1" />
-      <xsd:element name="hr"     type="Bpm_t"              minOccurs="0" maxOccurs="1" />
-      <xsd:element name="ehpe"   type="Meters_t"           minOccurs="0" maxOccurs="1" />
-      <xsd:element name="evpe"   type="Meters_t"           minOccurs="0" maxOccurs="1" />
-      <xsd:element name="elegps" type="Meters_t"           minOccurs="0" maxOccurs="1" />
-      <xsd:element name="temp"   type="DegreesCelsius_t"   minOccurs="0" maxOccurs="1" />
+      <xsd:element name="course"  type="Degrees_t"          minOccurs="0" maxOccurs="1" />
+      <xsd:element name="speed"   type="MetersPerSecond_t"  minOccurs="0" maxOccurs="1" />
+      <xsd:element name="dist"    type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="hr"      type="Bpm_t"              minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ehpe"    type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="evpe"    type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="elegps"  type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="asc"     type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="desc"    type="Meters_t"           minOccurs="0" maxOccurs="1" />
+      <xsd:element name="temp"    type="DegreesCelsius_t"   minOccurs="0" maxOccurs="1" />
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="TracksegmentExtension_t">
+    <xsd:annotation>
+        <xsd:documentation>
+            This type contains data fields a that cannot
+            be represented in trkseg track segment in GPX 1.1 instances.
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:all>
+      <xsd:element name="hrRecovery"      type="xsd:integer"  minOccurs="0" maxOccurs="1" />
+      <xsd:element name="hrRecoveryScore" type="xsd:integer"  minOccurs="0" maxOccurs="1" />
     </xsd:all>
   </xsd:complexType>
 
@@ -38,19 +54,19 @@
         </xsd:documentation>
     </xsd:annotation>
     <xsd:all>
-      <xsd:element name="deviceInfo"                type="xsd:string"  minOccurs="0" maxOccurs="1" >
+      <xsd:element name="device"                    type="xsd:string"  minOccurs="0" maxOccurs="1" >
         <xsd:annotation><xsd:documentation>Description of the recording device</xsd:documentation></xsd:annotation>
       </xsd:element>
-      <xsd:element name="deviceInfoInternalHr"      type="xsd:string"  minOccurs="0" maxOccurs="1" >
+      <xsd:element name="deviceInternalHr"          type="xsd:string"  minOccurs="0" maxOccurs="1" >
         <xsd:annotation><xsd:documentation>Description of the HR recording device</xsd:documentation></xsd:annotation>
       </xsd:element>
-      <xsd:element name="deviceInfoExternalHr"      type="xsd:string"  minOccurs="0" maxOccurs="1" >
+      <xsd:element name="deviceExternalHr"          type="xsd:string"  minOccurs="0" maxOccurs="1" >
         <xsd:annotation><xsd:documentation>Description of the external HR recording device</xsd:documentation></xsd:annotation>
       </xsd:element>
-      <xsd:element name="deviceInfoGps"             type="xsd:string"  minOccurs="0" maxOccurs="1" >
+      <xsd:element name="deviceGps"                 type="xsd:string"  minOccurs="0" maxOccurs="1" >
         <xsd:annotation><xsd:documentation>Description of the GPS device/module</xsd:documentation></xsd:annotation>
       </xsd:element>
-      <xsd:element name="deviceInfoBarometer"       type="xsd:string"  minOccurs="0" maxOccurs="1" >
+      <xsd:element name="deviceBarometer"           type="xsd:string"  minOccurs="0" maxOccurs="1" >
         <xsd:annotation><xsd:documentation>Description of the barometer device</xsd:documentation></xsd:annotation>
       </xsd:element>
       <xsd:element name="deviceFirmware"            type="xsd:string"  minOccurs="0" maxOccurs="1" >
