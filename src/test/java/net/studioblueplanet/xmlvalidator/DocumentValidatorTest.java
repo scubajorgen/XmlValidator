@@ -5,7 +5,6 @@
  */
 package net.studioblueplanet.xmlvalidator;
 
-import net.studioblueplanet.xmlvalidator.Validator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,10 +16,10 @@ import static org.junit.Assert.*;
  *
  * @author jorgen
  */
-public class ValidatorTest
+public class DocumentValidatorTest
 {
     
-    public ValidatorTest()
+    public DocumentValidatorTest()
     {
     }
     
@@ -51,7 +50,7 @@ public class ValidatorTest
     public void testValidateXMLSchema()
     {
         System.out.println("validateXMLSchema");
-        Validator instance = new Validator();
+        DocumentValidator instance = new DocumentValidator();
         assertEquals(true , instance.validateXMLSchema("src/test/resources/testHr.gpx"));           // Okay, XSD as URL
         assertEquals(true , instance.validateXMLSchema("src/test/resources/testHrXsdAsFile.gpx"));  // Okay, XSD as file
         assertEquals(false, instance.validateXMLSchema("src/test/resources/testHrError1.gpx"));     // Bad tag

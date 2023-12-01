@@ -27,11 +27,11 @@ import org.xml.sax.SAXException;
  *
  * @author jorgen
  */
-public class Validator
+public class DocumentValidator
 {
     private List<String> xsdLocations;
     
-    public Validator()
+    public DocumentValidator()
     {
     }
     

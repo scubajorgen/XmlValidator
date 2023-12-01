@@ -21,7 +21,7 @@ public class XmlValidator
         
         System.out.println("XML Validator");
         System.out.println("____________________________________________");
-        Validator validator=new Validator();
+        DocumentValidator validator=new DocumentValidator();
         if (args.length==1)
         {
             fileName=args[0];
